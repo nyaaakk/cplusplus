@@ -118,6 +118,7 @@ int main(void){
     SuiteCh1 suite1(&element3);
 
     suite1.afficherSuite();
+    
 
     return 0;
 }

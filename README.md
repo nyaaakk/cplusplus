@@ -1,3 +1,3 @@
 # cplusplus
 
-c le projet
+c le projet avec jb milou et moi meme

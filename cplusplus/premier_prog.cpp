@@ -79,44 +79,83 @@ class SuiteCh1{
 
     //fonctions
     void ajouterEnTete(double newDonnee){
-        ElCh1 element(newDonnee, pDebut);
-        pDebut = &element;
+        ElCh1* element = new ElCh1(newDonnee, pDebut);
+        pDebut = element;
     }
 
     void supprimerEnTete(){
-        pDebut = pDebut->getSuivant();
+        if( pDebut == nullptr ){
+            cout << "la suite est vide" << endl;
+        }
+        else{
+            pDebut = pDebut->getSuivant();
+        }
     }
 
     void ajouterEnQueue(double newDonnee){
-    
+        ElCh1* memoire = pDebut;
+        ElCh1* element = new ElCh1(newDonnee);
+        if( memoire == nullptr ){
+            pDebut = element;
+        }
+        else{
+            while( memoire->getSuivant() != nullptr ){
+                memoire = memoire->getSuivant();
+            }
+            memoire->setSuivant(element);
+        }
     }
 
     void supprimerEnQueue(){
         ElCh1* memoire = pDebut;
         if( memoire == nullptr ){
-            cout << "la chaine est vide" << endl;
+            cout << "la suite est vide" << endl;
+        }
+        else if( memoire->getSuivant() == nullptr ){
+            pDebut = nullptr;
         }
         else{
             while( memoire->getSuivant()->getSuivant() != nullptr ){
                 memoire = memoire->getSuivant();
             }
-            memoire = nullptr;
+            memoire->setSuivant(nullptr);
         }
     }
 
     void afficherElement(int n){
+        ElCh1* memoire = pDebut;
+        if( memoire == nullptr ){
+            cout << "la suite est vide" << endl;
+        }
+        else{
+            int i = 0;
+            while( memoire->getSuivant() != nullptr ){
+                memoire = memoire->getSuivant();
+                i++;
+            }
+            if( i < n ){
+                cout << "la suite n est pas aussi longue" << endl;
+            }
+            else{
+                memoire = pDebut;
+                for( i = 0; i < n; i++ ){
+                    memoire = memoire->getSuivant();
+                }
+                cout << "[" << n << "] " << memoire->getDonnee() << endl;
+            }
+        }
 
     }
 
     void afficherSuite(){
         ElCh1* memoire = pDebut;
         if( memoire == nullptr ){
-            cout << "La chaine est vide" << endl;
+            cout << "la suite est vide" << endl;
         }
         else{
             int i = 0;
             do{
-                cout << "[ " << i << " ] - " << memoire->getDonnee() << endl;
+                cout << "[" << i << "] " << memoire->getDonnee() << endl;
                 memoire = memoire->getSuivant();
                 i++;
             }
@@ -129,17 +168,16 @@ class SuiteCh1{
 
 int main(void){
 
-    ElCh1 element1(5);
-    ElCh1 element2(10, &element1);
-    ElCh1 element3(15, &element2);
-    SuiteCh1 suite1(&element3);
-
-    suite1.afficherSuite();
-    cout << endl;
-
+    SuiteCh1 suite1;
+    suite1.ajouterEnQueue(5);
+    suite1.ajouterEnQueue(10);
+    suite1.ajouterEnQueue(15);
+    suite1.ajouterEnQueue(20);
     suite1.supprimerEnQueue();
 
     suite1.afficherSuite();
+
+    suite1.afficherElement(5);
 
     return 0;
 }

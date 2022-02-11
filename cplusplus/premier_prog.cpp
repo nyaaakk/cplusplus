@@ -87,6 +87,23 @@ class SuiteCh1{
         pDebut = pDebut->getSuivant();
     }
 
+    void ajouterEnQueue(double newDonnee){
+    
+    }
+
+    void supprimerEnQueue(){
+        ElCh1* memoire = pDebut;
+        if( memoire == nullptr ){
+            cout << "la chaine est vide" << endl;
+        }
+        else{
+            while( memoire->getSuivant()->getSuivant() != nullptr ){
+                memoire = memoire->getSuivant();
+            }
+            memoire = nullptr;
+        }
+    }
+
     void afficherElement(int n){
 
     }
@@ -118,7 +135,11 @@ int main(void){
     SuiteCh1 suite1(&element3);
 
     suite1.afficherSuite();
-    
+    cout << endl;
+
+    suite1.supprimerEnQueue();
+
+    suite1.afficherSuite();
 
     return 0;
 }

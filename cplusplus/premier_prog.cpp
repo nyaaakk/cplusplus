@@ -24,7 +24,7 @@ class ElCh1{
     ElCh1(double newDonnee, ElCh1* newSuivant){
         donnee = newDonnee;
         suivant = newSuivant;
-    }//test
+    }
 
     //getters - setters
     public:

@@ -78,6 +78,7 @@ class Pile{
     }
 
     //fonctions
+    public:
     void ajouterEnTete(double newDonnee){
         ElCh1* element = new ElCh1(newDonnee, pDebut);
         pDebut = element;
@@ -95,7 +96,7 @@ class Pile{
     void afficherElement(int n){
         ElCh1* memoire = pDebut;
         if( memoire == nullptr ){
-            cout << "la suite est vide" << endl;
+            cout << "la pile est vide" << endl;
         }
         else{
             int i = 0;
@@ -252,16 +253,21 @@ class SuiteCh1{
 
 int main(void){
 
-    SuiteCh1 suite1;
-    suite1.ajouterEnQueue(5);
-    suite1.ajouterEnQueue(10);
-    suite1.ajouterEnQueue(15);
-    suite1.ajouterEnQueue(20);
-    suite1.supprimerEnQueue();
+    Pile pile1;
 
-    suite1.afficherSuite();
+    pile1.ajouterEnTete(12);
+    pile1.ajouterEnTete(47);
+    pile1.ajouterEnTete(67);
+    pile1.ajouterEnTete(89);
+    pile1.ajouterEnTete(18);
+    pile1.ajouterEnTete(24);
 
-    suite1.afficherElement(5);
+    pile1.afficherPile();
+
+    pile1.supprimerEnTete();
+    pile1.supprimerEnTete();
+
+    pile1.afficherPile();
 
     return 0;
 }

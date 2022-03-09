@@ -6,9 +6,11 @@
 
 using namespace std;
 
+template<typename T>
+
 int main(void){
 
-    Pile pile1;
+    Pile<double> pile1;
 
     pile1.ajouterEnTete(12);
     pile1.ajouterEnTete(47);

@@ -2,6 +2,8 @@
 
 using namespace std;
 
+template<typename T>
+
 class Pile{
 
     //attributs
@@ -29,7 +31,7 @@ class Pile{
 
     //fonctions
     public:
-    void ajouterEnTete(double newDonnee){
+    void ajouterEnTete(T newDonnee){
         ElCh1* element = new ElCh1(newDonnee, pDebut);
         pDebut = element;
     }

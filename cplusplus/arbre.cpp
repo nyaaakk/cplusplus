@@ -1,5 +1,9 @@
 #include "ElCh2.cpp"
 
+using namespace std;
+
+template<typename T>
+
 class Arbre{
 
     //attributs
@@ -26,7 +30,7 @@ class Arbre{
     }
 
     //fonctions
-    void ajouterDroite(double newDonnee){
+    void ajouterDroite(T newDonnee){
         ElCh2* memoire = pDebut;
         ElCh2* element = new ElCh2(newDonnee);
         if( memoire == nullptr ){
@@ -40,7 +44,7 @@ class Arbre{
         }
     }
 
-    void ajouterGauche(double newDonnee){
+    void ajouterGauche(T newDonnee){
         ElCh2* memoire = pDebut;
         ElCh2* element = new ElCh2(newDonnee);
         if( memoire == nullptr ){

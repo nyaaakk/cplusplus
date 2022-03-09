@@ -2,6 +2,8 @@
 
 using namespace std;
 
+template<typename T>
+
 class SuiteCh1{
 
     //attributs
@@ -28,7 +30,7 @@ class SuiteCh1{
     }
 
     //fonctions
-    void ajouterEnTete(double newDonnee){
+    void ajouterEnTete(T newDonnee){
         ElCh1* element = new ElCh1(newDonnee, pDebut);
         pDebut = element;
     }
@@ -42,7 +44,7 @@ class SuiteCh1{
         }
     }
 
-    void ajouterEnQueue(double newDonnee){
+    void ajouterEnQueue(T newDonnee){
         ElCh1* memoire = pDebut;
         ElCh1* element = new ElCh1(newDonnee);
         if( memoire == nullptr ){

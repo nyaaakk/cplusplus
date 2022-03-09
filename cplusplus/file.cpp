@@ -2,6 +2,8 @@
 
 using namespace std;
 
+template<typename T>
+
 class File{
 
     //attributs
@@ -28,7 +30,7 @@ class File{
     }
 
     //fonctions
-    void ajouterEnQueue(double newDonnee){
+    void ajouterEnQueue(T newDonnee){
         ElCh1* memoire = pDebut;
         ElCh1* element = new ElCh1(newDonnee);
         if( memoire == nullptr ){

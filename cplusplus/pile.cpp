@@ -7,7 +7,7 @@ template<typename T>
 class Pile{
 
     //attributs
-    private: ElCh1* pDebut;
+    private: ElCh1<T>* pDebut;
 
     //constructeurs
     public:
@@ -15,7 +15,7 @@ class Pile{
         pDebut = nullptr;
     }
 
-    Pile(ElCh1* element){
+    Pile(ElCh1<T>* element){
         pDebut = element;
     }
 
@@ -25,7 +25,7 @@ class Pile{
         return pDebut;
     }
 
-    void setPDebut(ElCh1* newPDebut){
+    void setPDebut(ElCh1<T>* newPDebut){
         pDebut = newPDebut;
     }
 

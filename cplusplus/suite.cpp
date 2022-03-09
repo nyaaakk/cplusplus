@@ -30,7 +30,7 @@ class SuiteCh1{
     }
 
     //fonctions
-    void ajouterEnTete(T newDonnee){
+    void ajouterEnTete(double newDonnee){
         ElCh1* element = new ElCh1(newDonnee, pDebut);
         pDebut = element;
     }
@@ -44,7 +44,7 @@ class SuiteCh1{
         }
     }
 
-    void ajouterEnQueue(T newDonnee){
+    void ajouterEnQueue(double newDonnee){
         ElCh1* memoire = pDebut;
         ElCh1* element = new ElCh1(newDonnee);
         if( memoire == nullptr ){

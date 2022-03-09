@@ -30,7 +30,7 @@ class File{
     }
 
     //fonctions
-    void ajouterEnQueue(T newDonnee){
+    void ajouterEnQueue(double newDonnee){
         ElCh1* memoire = pDebut;
         ElCh1* element = new ElCh1(newDonnee);
         if( memoire == nullptr ){

@@ -2,8 +2,6 @@
 
 using namespace std;
 
-template<typename T>
-
 class SuiteCh1{
 
     //attributs

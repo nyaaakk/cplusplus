@@ -2,13 +2,11 @@
 
 using namespace std;
 
-template<typename T>
-
 class ElCh1{
 
     //attributs
     private:
-    T donnee;
+    double donnee;
     ElCh1* suivant;
 
     //constructeurs
@@ -18,23 +16,23 @@ class ElCh1{
         suivant = nullptr;
     }
 
-    ElCh1(T newDonnee){
+    ElCh1(double newDonnee){
         donnee = newDonnee;
         suivant = nullptr;
     }
 
-    ElCh1(T newDonnee, ElCh1* newSuivant){
+    ElCh1(double newDonnee, ElCh1* newSuivant){
         donnee = newDonnee;
         suivant = newSuivant;
     }
 
     //getters - setters
     public:
-    T getDonnee(){
+    double getDonnee(){
         return donnee;
     }
 
-    void setDonnee(T newDonnee){
+    void setDonnee(double newDonnee){
         donnee = newDonnee;
     }
 

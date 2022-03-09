@@ -2,12 +2,10 @@
 
 using namespace std;
 
-template<typename T>
-
 class Pile{
 
     //attributs
-    private: ElCh1<T>* pDebut;
+    private: ElCh1* pDebut;
 
     //constructeurs
     public:
@@ -15,7 +13,7 @@ class Pile{
         pDebut = nullptr;
     }
 
-    Pile(ElCh1<T>* element){
+    Pile(ElCh1* element){
         pDebut = element;
     }
 
@@ -25,13 +23,13 @@ class Pile{
         return pDebut;
     }
 
-    void setPDebut(ElCh1<T>* newPDebut){
+    void setPDebut(ElCh1* newPDebut){
         pDebut = newPDebut;
     }
 
     //fonctions
     public:
-    void ajouterEnTete(T newDonnee){
+    void ajouterEnTete(double newDonnee){
         ElCh1* element = new ElCh1(newDonnee, pDebut);
         pDebut = element;
     }

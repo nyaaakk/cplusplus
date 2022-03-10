@@ -1,8 +1,5 @@
 #include <iostream>
-#include "file.cpp"
-#include "pile.cpp"
-#include "suite.cpp"
-#include "arbre.cpp"
+#include "header.h"
 
 using namespace std;
 

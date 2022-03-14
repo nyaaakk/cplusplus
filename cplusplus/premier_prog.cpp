@@ -1,5 +1,4 @@
-#include <iostream>
-#include "header.h"
+#include "pile.cpp"
 
 using namespace std;
 

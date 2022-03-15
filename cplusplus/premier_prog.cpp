@@ -4,19 +4,9 @@ using namespace std;
 
 int main(void){
 
-    Pile pile1;
+    Pile<char> pile1;
 
-    pile1.ajouterEnTete(12);
-    pile1.ajouterEnTete(47);
-    pile1.ajouterEnTete(67);
-    pile1.ajouterEnTete(89);
-    pile1.ajouterEnTete(18);
-    pile1.ajouterEnTete(24);
-
-    pile1.afficherPile();
-
-    pile1.supprimerEnTete();
-    pile1.supprimerEnTete();
+    pile1.Empiler('a');
 
     pile1.afficherPile();
 

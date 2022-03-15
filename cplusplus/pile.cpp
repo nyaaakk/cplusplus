@@ -2,10 +2,10 @@
 
 using namespace std;
 
-class Pile{
+template <typename T> class Pile{
 
     //attributs
-    private: ElCh1* pDebut;
+    private: ElCh1<T>* pDebut;
 
     //constructeurs
     public:
@@ -13,28 +13,28 @@ class Pile{
         pDebut = nullptr;
     }
 
-    Pile(ElCh1* element){
+    Pile(ElCh1<T>* element){
         pDebut = element;
     }
 
     //getters - setters
     public:
-    ElCh1* getPDebut(){
+    ElCh1<T>* getPDebut(){
         return pDebut;
     }
 
-    void setPDebut(ElCh1* newPDebut){
+    void setPDebut(ElCh1<T>* newPDebut){
         pDebut = newPDebut;
     }
 
     //fonctions
     public:
-    void ajouterEnTete(double newDonnee){
-        ElCh1* element = new ElCh1(newDonnee, pDebut);
+    void Empiler(T newDonnee){
+        ElCh1<T>* element = new ElCh1<T>(newDonnee, pDebut);
         pDebut = element;
     }
 
-    void supprimerEnTete(){
+    void Depiler(){
         if( pDebut == nullptr ){
             cout << "la suite est vide" << endl;
         }
@@ -44,7 +44,7 @@ class Pile{
     }
 
     void afficherElement(int n){
-        ElCh1* memoire = pDebut;
+        ElCh1<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "la pile est vide" << endl;
         }
@@ -68,7 +68,7 @@ class Pile{
     }
 
     void afficherPile(){
-        ElCh1* memoire = pDebut;
+        ElCh1<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "la pile est vide" << endl;
         }

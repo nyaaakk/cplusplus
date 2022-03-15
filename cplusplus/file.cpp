@@ -2,10 +2,10 @@
 
 using namespace std;
 
-class File{
+template <typename T> class File{
 
     //attributs
-    private: ElCh1* pDebut;
+    private: ElCh1<T>* pDebut;
 
     //constructeur
     public:
@@ -13,24 +13,24 @@ class File{
         pDebut = nullptr;
     }
 
-    File(ElCh1* element){
+    File(ElCh1<T>* element){
         pDebut = element;
     }
 
     //getters - setters
     public:
-    ElCh1* getPDebut(){
+    ElCh1<T>* getPDebut(){
         return pDebut;
     }
 
-    void setPDebut(ElCh1* newPDebut){
+    void setPDebut(ElCh1<T>* newPDebut){
         pDebut = newPDebut;
     }
 
     //fonctions
-    void ajouterEnQueue(double newDonnee){
-        ElCh1* memoire = pDebut;
-        ElCh1* element = new ElCh1(newDonnee);
+    void Enfiler(T newDonnee){
+        ElCh1<T>* memoire = pDebut;
+        ElCh1<T>* element = new ElCh1<T>(newDonnee);
         if( memoire == nullptr ){
             pDebut = element;
         }
@@ -42,7 +42,7 @@ class File{
         }
     }
 
-    void supprimerEnTete(){
+    void Defiler(){
         if( pDebut == nullptr ){
             cout << "la suite est vide" << endl;
         }
@@ -52,7 +52,7 @@ class File{
     }
 
     void afficherElement(int n){
-        ElCh1* memoire = pDebut;
+        ElCh1<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "la suite est vide" << endl;
         }
@@ -76,7 +76,7 @@ class File{
     }
 
     void afficherFile(){
-        ElCh1* memoire = pDebut;
+        ElCh1<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "la suite est vide" << endl;
         }

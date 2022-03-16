@@ -26,6 +26,10 @@ template <typename T> class ElCh1{
         suivant = newSuivant;
     }
 
+    //destructeur
+    public:
+    ~ElCh1();
+
     //getters - setters
     public:
     T getDonnee(){

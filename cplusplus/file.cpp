@@ -17,6 +17,10 @@ template <typename T> class File{
         pDebut = element;
     }
 
+    //destructeur
+    public:
+    ~File();
+
     //getters - setters
     public:
     ElCh1<T>* getPDebut(){

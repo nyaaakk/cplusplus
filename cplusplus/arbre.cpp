@@ -17,6 +17,10 @@ class Arbre{
         pDebut = element;
     }
 
+    //destructeur
+    public:
+    ~Arbre();
+
     //getters - setters
     public:
     ElCh2* getPDebut(){

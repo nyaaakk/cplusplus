@@ -24,6 +24,10 @@ class ElCh2{
         suivantDroite = nullptr;
     }
 
+    //destructeur
+    public:
+    ~ElCh2();
+
     //getters - setters
     public:
     double getDonnee(){

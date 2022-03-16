@@ -17,6 +17,10 @@ template <typename T> class Pile{
         pDebut = element;
     }
 
+    //destructeur
+    public:
+    ~Pile();
+
     //getters - setters
     public:
     ElCh1<T>* getPDebut(){

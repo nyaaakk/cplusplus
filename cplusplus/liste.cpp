@@ -17,6 +17,10 @@ template <typename T> class SuiteCh1{
         pDebut = element;
     }
 
+    //destructeur
+    public:
+    ~Liste();
+
     //getters - setters
     public:
     ElCh1<T>* getPDebut(){

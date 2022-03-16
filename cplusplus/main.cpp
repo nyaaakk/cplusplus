@@ -1,6 +1,8 @@
 #include "ElCh1.cpp"
 #include "ElCh2.cpp"
 #include "file.cpp"
+#include "pile.cpp"
+#include "file.cpp"
 #include "arbre.cpp"
 
 using namespace std;

@@ -24,12 +24,6 @@ class ElCh2{
         suivantDroite = nullptr;
     }
 
-    ElCh2(double newDonnee, ElCh2* newSuivant){
-        donnee = newDonnee;
-        suivantGauche = newSuivant;
-        suivantDroite = nullptr;
-    }
-
     //getters - setters
     public:
     double getDonnee(){

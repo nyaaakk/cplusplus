@@ -1,7 +1,3 @@
-#include <iostream>
-
-using namespace std;
-
 template <typename T> class ElCh1{
 
     //attributs

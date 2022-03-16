@@ -1,11 +1,7 @@
-#include "ElCh1.cpp"
-
-using namespace std;
-
-class SuiteCh1{
+template <typename T> class SuiteCh1{
 
     //attributs
-    private: ElCh1* pDebut;
+    private: ElCh1<T>* pDebut;
 
     //constructeurs
     public:
@@ -13,23 +9,23 @@ class SuiteCh1{
         pDebut = nullptr;
     }
 
-    SuiteCh1(ElCh1* element){
+    SuiteCh1(ElCh1<T>* element){
         pDebut = element;
     }
 
     //getters - setters
     public:
-    ElCh1* getPDebut(){
+    ElCh1<T>* getPDebut(){
         return pDebut;
     }
 
-    void setPDebut(ElCh1* newPDebut){
+    void setPDebut(ElCh1<T>* newPDebut){
         pDebut = newPDebut;
     }
 
     //fonctions
-    void ajouterEnTete(double newDonnee){
-        ElCh1* element = new ElCh1(newDonnee, pDebut);
+    void ajouterEnTete(T newDonnee){
+        ElCh1<T>* element = new ElCh1(newDonnee, pDebut);
         pDebut = element;
     }
 
@@ -42,9 +38,9 @@ class SuiteCh1{
         }
     }
 
-    void ajouterEnQueue(double newDonnee){
-        ElCh1* memoire = pDebut;
-        ElCh1* element = new ElCh1(newDonnee);
+    void ajouterEnQueue(T newDonnee){
+        ElCh1<T>* memoire = pDebut;
+        ElCh1<T>* element = new ElCh1(newDonnee);
         if( memoire == nullptr ){
             pDebut = element;
         }
@@ -57,7 +53,7 @@ class SuiteCh1{
     }
 
     void supprimerEnQueue(){
-        ElCh1* memoire = pDebut;
+        ElCh1<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "la suite est vide" << endl;
         }
@@ -73,7 +69,7 @@ class SuiteCh1{
     }
 
     void afficherElement(int n){
-        ElCh1* memoire = pDebut;
+        ElCh1<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "la suite est vide" << endl;
         }
@@ -98,7 +94,7 @@ class SuiteCh1{
     }
 
     void afficherSuite(){
-        ElCh1* memoire = pDebut;
+        ElCh1<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "la suite est vide" << endl;
         }

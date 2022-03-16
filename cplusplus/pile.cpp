@@ -1,7 +1,3 @@
-#include "ElCh1.cpp"
-
-using namespace std;
-
 template <typename T> class Pile{
 
     //attributs

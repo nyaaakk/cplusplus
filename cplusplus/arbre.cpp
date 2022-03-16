@@ -1,4 +1,6 @@
-#include "ElCh2.cpp"
+#include <iostream>
+
+using namespace std;
 
 class Arbre{
 
@@ -67,3 +69,4 @@ class Arbre{
         }
     }
 };
+*/

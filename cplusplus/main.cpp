@@ -1,20 +1,25 @@
-#include <iostream>
 #include "ElCh1.cpp"
-#include "pile.cpp"
+#include "ElCh2.cpp"
 #include "file.cpp"
-#include "liste.cpp"
+#include "arbre.cpp"
 
 using namespace std;
 
 int main(void){
 
-    SuiteCh1<double> pile1;
+    File<double> file1;
 
-    pile1.ajouterEnTete(65);
-    pile1.ajouterEnQueue(40);
-    pile1.supprimerEnQueue();
+    file1.Enfiler(4.6);
 
-    pile1.afficherSuite();
+    file1.Enfiler(8);
+
+    file1.afficherFile();
+
+    file1.Defiler();
+
+    file1.Defiler();
+
+    file1.afficherFile();
 
     return 0;
 }

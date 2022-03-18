@@ -7,7 +7,7 @@ template <typename T> class ElCh1{
     //attributs
     private:
     T donnee;
-    ElCh1* suivant;
+    ElCh1<T>* suivant;
 
     //constructeurs
     public:
@@ -21,7 +21,7 @@ template <typename T> class ElCh1{
         suivant = nullptr;
     }
 
-    ElCh1(T newDonnee, ElCh1* newSuivant){
+    ElCh1(T newDonnee, ElCh1<T>* newSuivant){
         donnee = newDonnee;
         suivant = newSuivant;
     }
@@ -40,11 +40,11 @@ template <typename T> class ElCh1{
         donnee = newDonnee;
     }
 
-    ElCh1* getSuivant(){
+    ElCh1<T>* getSuivant(){
         return suivant;
     }
 
-    void setSuivant(ElCh1* newSuivant){
+    void setSuivant(ElCh1<T>* newSuivant){
         suivant = newSuivant;
     }
 

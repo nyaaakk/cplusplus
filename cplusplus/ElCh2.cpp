@@ -2,13 +2,13 @@
 
 using namespace std;
 
-class ElCh2{
+template <typename T> class ElCh2{
 
     //attributs
     private:
-    double donnee;
-    ElCh2* suivantGauche;
-    ElCh2* suivantDroite;
+    T donnee;
+    ElCh2<T>* suivantGauche;
+    ElCh2<T>* suivantDroite;
 
     //constructeurs
     public:
@@ -18,7 +18,7 @@ class ElCh2{
         suivantDroite = nullptr;
     }
 
-    ElCh2(double newDonnee){
+    ElCh2(T newDonnee){
         donnee = newDonnee;
         suivantGauche = nullptr;
         suivantDroite = nullptr;
@@ -30,27 +30,27 @@ class ElCh2{
 
     //getters - setters
     public:
-    double getDonnee(){
+    T getDonnee(){
         return donnee;
     }
 
-    void setDonnee(double newDonnee){
+    void setDonnee(T newDonnee){
         donnee = newDonnee;
     }
 
-    ElCh2* getSuivantGauche(){
+    ElCh2<T>* getSuivantGauche(){
         return suivantGauche;
     }
 
-    ElCh2* getSuivantDroite(){
+    ElCh2<T>* getSuivantDroite(){
         return suivantDroite;
     }
 
-    void setSuivantGauche(ElCh2* newSuivant){
+    void setSuivantGauche(ElCh2<T>* newSuivant){
         suivantGauche = newSuivant;
     }
 
-    void setSuivantDroite(ElCh2* newSuivant){
+    void setSuivantDroite(ElCh2<T>* newSuivant){
         suivantDroite = newSuivant;
     }
 

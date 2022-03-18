@@ -2,10 +2,10 @@
 
 using namespace std;
 
-class Arbre{
+template <typename T> class Arbre{
 
     //attributs
-    private: ElCh2* pDebut;
+    private: ElCh2<T>* pDebut;
 
     //constructeurs
     public:
@@ -13,7 +13,7 @@ class Arbre{
         pDebut = nullptr;
     }
 
-    Arbre(ElCh2* element){
+    Arbre(ElCh2<T>* element){
         pDebut = element;
     }
 
@@ -23,18 +23,18 @@ class Arbre{
 
     //getters - setters
     public:
-    ElCh2* getPDebut(){
+    ElCh2<T>* getPDebut(){
         return pDebut;
     }
 
-    void setPDebut(ElCh2* newPDebut){
+    void setPDebut(ElCh2<T>* newPDebut){
         pDebut = newPDebut;
     }
 
     //fonctions
-    void ajouterDroite(double newDonnee){
-        ElCh2* memoire = pDebut;
-        ElCh2* element = new ElCh2(newDonnee);
+    void ajouterDroite(T newDonnee){
+        ElCh2<T>* memoire = pDebut;
+        ElCh2<T>* element = new ElCh2(newDonnee);
         if( memoire == nullptr ){
             pDebut = element;
         }
@@ -46,9 +46,9 @@ class Arbre{
         }
     }
 
-    void ajouterGauche(double newDonnee){
-        ElCh2* memoire = pDebut;
-        ElCh2* element = new ElCh2(newDonnee);
+    void ajouterGauche(T newDonnee){
+        ElCh2<T>* memoire = pDebut;
+        ElCh2<T>* element = new ElCh2(newDonnee);
         if( memoire == nullptr ){
             pDebut = element;
         }
@@ -61,15 +61,12 @@ class Arbre{
     }
 
     void afficherArbre(){
-        ElCh2* memoire = pDebut;
+        ElCh2<T>* memoire = pDebut;
         if( memoire == nullptr ){
             cout << "l arbre est vide" << endl;
         }
         else{
-            do{
-                cout << memoire->getDonnee() << endl;
-            }
-            while( memoire->getSuivantDroite() != nullptr );
+            cout << "L'arbre n'est pas vide" << endl;
         }
     }
 };

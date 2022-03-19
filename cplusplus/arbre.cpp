@@ -2,71 +2,78 @@
 
 using namespace std;
 
-template <typename T> class Arbre{
+#ifndef class_arbre
+#define class_arbre
 
-    //attributs
-    private: ElCh2<T>* pDebut;
+    template <typename T> class Arbre{
 
-    //constructeurs
-    public:
-    Arbre(){
-        pDebut = nullptr;
-    }
+        //attributs
+        private: ElCh2<T>* pDebut;
 
-    Arbre(ElCh2<T>* element){
-        pDebut = element;
-    }
+        //constructeurs
+        public:
+        Arbre(){
+            pDebut = nullptr;
+        }
 
-    //destructeur
-    public:
-    ~Arbre();
-
-    //getters - setters
-    public:
-    ElCh2<T>* getPDebut(){
-        return pDebut;
-    }
-
-    void setPDebut(ElCh2<T>* newPDebut){
-        pDebut = newPDebut;
-    }
-
-    //fonctions
-    void ajouterDroite(T newDonnee){
-        ElCh2<T>* memoire = pDebut;
-        ElCh2<T>* element = new ElCh2(newDonnee);
-        if( memoire == nullptr ){
+        Arbre(ElCh2<T>* element){
             pDebut = element;
         }
-        else{
-            while( memoire->getSuivantDroite() != nullptr ){
-                memoire = memoire->getSuivantDroite();
-            }
-            memoire->setSuivantDroite(element);
-        }
-    }
 
-    void ajouterGauche(T newDonnee){
-        ElCh2<T>* memoire = pDebut;
-        ElCh2<T>* element = new ElCh2(newDonnee);
-        if( memoire == nullptr ){
-            pDebut = element;
+        //destructeur
+        public:
+        ~Arbre(){
+            //code
         }
-        else{
-            while( memoire->getSuivantGauche() != nullptr ){
-                memoire = memoire->getSuivantGauche();
-            }
-            memoire->setSuivantGauche(element);
-        }
-    }
 
-    void afficherArbre(){
-        ElCh2<T>* memoire = pDebut;
-        if( memoire == nullptr ){
-            cout << "l arbre est vide" << endl;
+        //getters - setters
+        public:
+        ElCh2<T>* getPDebut(){
+            return pDebut;
         }
-        else{
-            cout << "L'arbre n'est pas vide" << endl;
+
+        void setPDebut(ElCh2<T>* newPDebut){
+            pDebut = newPDebut;
         }
-    }
-};
+
+        //fonctions
+        void ajouterDroite(T newDonnee){
+            ElCh2<T>* memoire = pDebut;
+            ElCh2<T>* element = new ElCh2(newDonnee);
+            if( memoire == nullptr ){
+                pDebut = element;
+            }
+            else{
+                while( memoire->getSuivantDroite() != nullptr ){
+                    memoire = memoire->getSuivantDroite();
+                }
+                memoire->setSuivantDroite(element);
+            }
+        }
+
+        void ajouterGauche(T newDonnee){
+            ElCh2<T>* memoire = pDebut;
+            ElCh2<T>* element = new ElCh2(newDonnee);
+            if( memoire == nullptr ){
+                pDebut = element;
+            }
+            else{
+                while( memoire->getSuivantGauche() != nullptr ){
+                    memoire = memoire->getSuivantGauche();
+                }
+                memoire->setSuivantGauche(element);
+            }
+        }
+
+        void afficherArbre(){
+            ElCh2<T>* memoire = pDebut;
+            if( memoire == nullptr ){
+                cout << "l arbre est vide" << endl;
+            }
+            else{
+                cout << "L'arbre n'est pas vide" << endl;
+            }
+        }
+    };
+
+#endif

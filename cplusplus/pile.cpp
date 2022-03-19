@@ -2,88 +2,95 @@
 
 using namespace std;
 
-template <typename T> class Pile{
+#ifndef class_pile
+#define class_pile
 
-    //attributs
-    private: ElCh1<T>* pDebut;
+    template <typename T> class Pile{
 
-    //constructeurs
-    public:
-    Pile(){
-        pDebut = nullptr;
-    }
+        //attributs
+        private: ElCh1<T>* pDebut;
 
-    Pile(ElCh1<T>* element){
-        pDebut = element;
-    }
-
-    //destructeur
-    public:
-    ~Pile();
-
-    //getters - setters
-    public:
-    ElCh1<T>* getPDebut(){
-        return pDebut;
-    }
-
-    void setPDebut(ElCh1<T>* newPDebut){
-        pDebut = newPDebut;
-    }
-
-    //fonctions
-    public:
-    void Empiler(T newDonnee){
-        ElCh1<T>* element = new ElCh1<T>(newDonnee, pDebut);
-        pDebut = element;
-    }
-
-    void Depiler(){
-        if( pDebut == nullptr ){
-            cout << "la suite est vide" << endl;
+        //constructeurs
+        public:
+        Pile(){
+            pDebut = nullptr;
         }
-        else{
-            pDebut = pDebut->getSuivant();
-        }
-    }
 
-    void afficherElement(int n){
-        ElCh1<T>* memoire = pDebut;
-        if( memoire == nullptr ){
-            cout << "la pile est vide" << endl;
+        Pile(ElCh1<T>* element){
+            pDebut = element;
         }
-        else{
-            int i = 0;
-            while( memoire->getSuivant() != nullptr ){
-                memoire = memoire->getSuivant();
-                i++;
-            }
-            if( i < n ){
-                cout << "la pile n est pas aussi longue" << endl;
+
+        //destructeur
+        public:
+        ~Pile(){
+            //code
+        }
+
+        //getters - setters
+        public:
+        ElCh1<T>* getPDebut(){
+            return pDebut;
+        }
+
+        void setPDebut(ElCh1<T>* newPDebut){
+            pDebut = newPDebut;
+        }
+
+        //fonctions
+        public:
+        void Empiler(T newDonnee){
+            ElCh1<T>* element = new ElCh1<T>(newDonnee, pDebut);
+            pDebut = element;
+        }
+
+        void Depiler(){
+            if( pDebut == nullptr ){
+                cout << "la suite est vide" << endl;
             }
             else{
-                memoire = pDebut;
-                for( i = 0; i < n; i++ ){
-                    memoire = memoire->getSuivant();
-                }
-                cout << "[" << n << "] " << memoire->getDonnee() << endl;
+                pDebut = pDebut->getSuivant();
             }
         }
-    }
 
-    void afficherPile(){
-        ElCh1<T>* memoire = pDebut;
-        if( memoire == nullptr ){
-            cout << "la pile est vide" << endl;
-        }
-        else{
-            int i = 0;
-            do{
-                cout << "[" << i << "] " << memoire->getDonnee() << endl;
-                memoire = memoire->getSuivant();
-                i++;
+        void afficherElement(int n){
+            ElCh1<T>* memoire = pDebut;
+            if( memoire == nullptr ){
+                cout << "la pile est vide" << endl;
             }
-            while( memoire != nullptr );
+            else{
+                int i = 0;
+                while( memoire->getSuivant() != nullptr ){
+                    memoire = memoire->getSuivant();
+                    i++;
+                }
+                if( i < n ){
+                    cout << "la pile n est pas aussi longue" << endl;
+                }
+                else{
+                    memoire = pDebut;
+                    for( i = 0; i < n; i++ ){
+                        memoire = memoire->getSuivant();
+                    }
+                    cout << "[" << n << "] " << memoire->getDonnee() << endl;
+                }
+            }
         }
-    }    
-};
+
+        void afficherPile(){
+            ElCh1<T>* memoire = pDebut;
+            if( memoire == nullptr ){
+                cout << "la pile est vide" << endl;
+            }
+            else{
+                int i = 0;
+                do{
+                    cout << "[" << i << "] " << memoire->getDonnee() << endl;
+                    memoire = memoire->getSuivant();
+                    i++;
+                }
+                while( memoire != nullptr );
+            }
+        }    
+    };
+
+#endif

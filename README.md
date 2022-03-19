@@ -1,5 +1,5 @@
 # cplusplus
 
-projet cpp 3e semestre
+projet cpp 4e semestre
 
 groupe composé de Jean-Baptiste Milon et Ryan Picard

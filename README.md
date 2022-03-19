@@ -1,3 +1,5 @@
 # cplusplus
 
-c le projet avec jb milou et moi meme
+projet cpp 3e semestre
+
+groupe composé de Jean-Baptiste Milon et Ryan Picard
